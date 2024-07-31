@@ -1,3 +1,232 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 #heading {
     color: aquamarine;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 110px;
+    height: 80px;
+    align-items: center;
+    box-shadow: 0 15px 40px -20px rgba(40, 44, 63, .15);
+}
+
+.navItems ul{
+    display: flex;
+}
+
+.navItems ul li {
+    list-style-type: none;
+    margin-right: 50px;
+}
+
+.navItems ul li:hover {
+    color: #fc8019;
+}
+
+.navItems ul li:last-child {
+    margin-right: 0;
+}
+
+.navItems ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+}
+
+.navItems ul li a ._2MSid {
+    fill: #fff;
+    stroke-width: 2px;
+    stroke: #282c3f;
+}
+
+
+
+.navItems ul li a .number {
+    position: absolute;
+    left: 6px;
+}
+
+.navItems ul li a p {
+    color: #3d4152;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: sans-serif;
+    padding-left: 8px;
+    transition: font-weight 2s;
+}
+
+.navItems ul li a p:hover {
+    font-weight: 700;   
+}
+
+.res-container {
+    margin: 0 188px;
+}
+
+.res-container .res-container-heading {
+    padding:16px 0px;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.res-cards {
+    padding: 0px;
+    list-style: none;
+    margin-block-end: 0px;
+    display: grid;
+    -webkit-box-align: start;
+    align-items: start;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin: 32px 0px 32px 16px;
+}
+
+.res-card {
+    display: inline-block;
+    width: 234px;
+    height: 258px;
+    text-decoration: none;
+}
+
+.res-card:hover {
+    transform: scale(0.95, 0.95);
+    transform-origin: center center;
+    transition: 0.1s ease-in;
+}
+
+.res-card-image-container,
+.res-card-image-container-logo {
+    width: 100%;
+    height: 156px;
+    border-radius: 16px;
+    overflow: hidden;
+    filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 8px);
+    object-fit: cover;
+}
+
+.res-card-image-container {
+    position: relative;
+}
+
+.res-card-image-container-paracontainer {
+    background: linear-gradient(#1b1e2400 0%, #1b1e24 84.21%);
+    height: 81px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.res-card-image-container-para {
+    position: absolute;
+    bottom: 0px;
+    font-weight: 700;
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.5px;
+    color: rgba(255, 255, 255, 0.92);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    padding: 12px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.res-card-content {
+    margin: 12px 0 0 12px;
+}
+
+.res-name {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.res-card-content-rating-deliverytime-container, 
+.res-card-content-rating {
+    display: flex;
+}
+
+.res-card-content-rating-deliverytime {
+    margin-top: 2px;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    width: 100%;
+    margin-top: 2px;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
+.res-card-content-rating p,
+.res-card-content-deliverytime p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.res-card-content-rating p {
+    margin-left: 1px;
+}
+
+.res-card-content-deliverytime p {
+    margin-left: 3px;
+}
+
+.res-card-content-cuisines {
+    margin-top: 2px;
+}
+
+.res-card-content-cuisines .res-card-content-cuisines-text {
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.6);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.res-card-content-location .res-card-content-location-text {
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.6);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
