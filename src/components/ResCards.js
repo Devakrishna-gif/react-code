@@ -1,16 +1,20 @@
 import { res_images } from "../utils/constants";
 
 const ResCards = (props) =>{
-    console.log(props)
+    // console.log(props)
     let {cloudinaryImageId, name, avgRating, cuisines, areaName} = props?.resData?.info;
     let {slaString} = props?.resData?.info?.sla;
-    let {header, subHeader}=props?.resData?.info?.aggregatedDiscountInfoV3;
+    let discountInfo = props?.resData?.info?.aggregatedDiscountInfoV3;
+    let header = discountInfo?.header;
+    let subHeader = discountInfo?.subHeader;
     return (
         <a href="/" className="res-card">
           <div className="res-card-image-container">
             <img className="res-card-image-container-logo" alt="res-card-image-container-logo" src={res_images + cloudinaryImageId}/>
             <div className="res-card-image-container-paracontainer">
-            <p className="res-card-image-container-para"> {header +" "+ subHeader}</p>
+            {header && subHeader && (
+              <p className="res-card-image-container-para">{header + " " + subHeader}</p>
+            )}
             </div>
           </div>
           <div className="res-card-content">

@@ -35,11 +35,17 @@
     margin-right: 0;
 }
 
-.navItems ul li a {
+.navItems ul li a,
+.navItems ul li button {
     display: flex;
     align-items: center;
     text-decoration: none;
     position: relative;
+}
+
+.navItems ul li button {
+    background-color: unset;
+    border: none;
 }
 
 .navItems ul li a ._2MSid {
@@ -55,7 +61,8 @@
     left: 6px;
 }
 
-.navItems ul li a p {
+.navItems ul li a p,
+.navItems ul li button p {
     color: #3d4152;
     font-size: 16px;
     font-weight: 500;
@@ -64,8 +71,11 @@
     transition: font-weight 2s;
 }
 
-.navItems ul li a p:hover {
-    font-weight: 700;   
+.navItems ul li a p:hover,
+.navItems ul li button p:hover
+ {
+    font-weight: 700;  
+    cursor: pointer; 
 }
 
 .res-container {
@@ -258,5 +268,42 @@
     color: rgba(2, 6, 12, 0.75);
     font-family: inherit;
     margin-right: 8px;
+}
+
+.res-card-image-container {
+    width: 100%;
+    height: 156px;
+    background-color: #f0f0f0;   
+}
+
+.shimmer-heading {
+    background-color: #f0f0f0;
+    margin: 32px 0 32px 188px;
+    width: 20%;
+    height: 20px;
+}
+
+.shimmer-container .res-card-content {
+    margin-left: 0;
+}
+
+.shimmer-container .res-card {
+    margin-right: 20px;
+    margin-right: 20px;
+    height: 300px;
+}
+
+.shimmer-container .res-name {
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+}
+
+.shimmer-container .res-name-text {
+    background-color: #f0f0f0;
+    width: 80%;
+    height: 20px;
+    margin-top: 20px;
 }
 
