@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ResCards from "./ResCards";
 import Shimmer from "./Shimmer";
+import FilterButtons from "./FilterButtons";
 
 
 const Body  = ()=>{ 
@@ -33,25 +34,12 @@ const Body  = ()=>{
         setFilteredRest(updatedList);
       }
     };
-  
-
-    let updatedFilter = listOfFIlters.map(filter=>{
-      return filter
-    })
 
     
     return listOfRest.length === 0?<Shimmer />: (
       <div className="res-container">
         <h1 className="res-container-heading">Resturants with online food delivery in Hyderabad</h1>
-        <div className="res-filters-container">
-          <button className="res-filter res-filter-rating" onClick={toggleFilter}>{updatedFilter[3]?.facetInfo[1]?.label}</button>
-          <button className="res-filter res-filter-fastDelivery">{updatedFilter[0]?.facetInfo[0]?.label}</button>
-          <button className="res-filter res-filter-newOnSwiggy">{updatedFilter[2]?.facetInfo[0]?.label}</button>
-          <button className="res-filter res-filter-pureVeg">{updatedFilter[4]?.facetInfo[0]?.label}</button>
-          <button className="res-filter res-filter-offers">{updatedFilter[5]?.facetInfo[0]?.label}</button>
-          <button className="res-filter res-filter-amountRange">{updatedFilter[6]?.facetInfo[0]?.label}</button>
-          <button className="res-filter res-filter-lessAmount">{updatedFilter[6]?.facetInfo[2]?.label}</button>
-        </div>
+        <FilterButtons filters={listOfFIlters} onRatingClick={toggleFilter}/>
         <div className="res-cards">
           {
             filteredRest.map(resList=> <ResCards key={resList.info.id} resData={resList}/>)
