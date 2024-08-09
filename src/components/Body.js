@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ResCards from "./ResCards";
 import Shimmer from "./Shimmer";
 import FilterButtons from "./FilterButtons";
+import Cuisines from "./Cuisines";
 
 
 const Body  = ()=>{ 
@@ -12,7 +13,9 @@ const Body  = ()=>{
     // Array Destructuring
     let [listOfRest, setListOfRest] = useState([]);
     let [filteredRest, setFilteredRest] = useState([]);
-    let [listOfFIlters, setListOfFilters] = useState([])
+    let [listOfFIlters, setListOfFilters] = useState([]);
+    let [listOfRestHeading, setListOfRestHeading] = useState([]);
+    let [listOfCuisines, setListOfCuisines] = useState([]);
 
     useEffect(()=>{
       fetchData();
@@ -24,6 +27,8 @@ const Body  = ()=>{
       setListOfRest(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       setFilteredRest(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       setListOfFilters(json?.data?.cards[3]?.card?.card?.facetList);
+      setListOfRestHeading(json?.data?.cards[2]?.card?.card.title);
+      setListOfCuisines(json?.data?.cards[0]?.card?.card);
     }
 
     const toggleFilter = () => {
@@ -38,7 +43,9 @@ const Body  = ()=>{
     
     return listOfRest.length === 0?<Shimmer />: (
       <div className="res-container">
-        <h1 className="res-container-heading">Resturants with online food delivery in Hyderabad</h1>
+        <Cuisines cuisinesData={listOfCuisines}/>
+        <hr></hr>
+        <h1 className="res-container-heading">{listOfRestHeading}</h1>
         <FilterButtons filters={listOfFIlters} onRatingClick={toggleFilter}/>
         <div className="res-cards">
           {

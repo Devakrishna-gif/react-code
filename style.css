@@ -5,6 +5,11 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+hr {
+    border: 1px solid rgba(2, 6, 12, 0.05);
+    margin: 32px 0;
+}
+
 #heading {
     color: aquamarine;
 }
@@ -306,4 +311,56 @@
     height: 20px;
     margin-top: 20px;
 }
+
+.res-cuisines-container {
+    margin:16px 0;
+}
+
+.res-cuisines-container-heading {
+    font-size: 24px;
+    font-family: inherit;
+}
+
+.res-cuiseines-card,
+.res-cuisines-card-link {
+    width: 144px;
+    height: 184px;
+    display: inline-block;
+}
+
+.res-cuiseines-card {
+    margin-right: 30px;
+}
+
+.res-cuisines-card-image {
+    width: 144px;
+    height: 184px;
+    object-fit: cover;
+}
+
+.res-cuisines-container .slick-prev:before,
+.res-cuisines-container .slick-next:before{
+    color: #000;
+    font-size: 24px;
+}
+
+.res-cuisines-container .slick-prev,
+.res-cuisines-container .slick-next {
+    top: -18px;
+}
+
+.res-cuisines-container .slick-prev {
+    left: 900px;
+}
+
+.res-cuisines-container .slick-next {
+    right: 60px;
+}
+
+.res-cuisines-container .slick-dots {
+    display: none !important;
+}
+
+
+
 
