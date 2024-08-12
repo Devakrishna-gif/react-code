@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 const Cuisines  = (props)=>{
     let cuisinesTitle = props?.cuisinesData?.header?.title;
     let cuisineCards = props.cuisinesData.imageGridCards.info;
-    console.log(props);
+    // console.log(props);
     const settings = {
         dots: true,
         infinite: false,

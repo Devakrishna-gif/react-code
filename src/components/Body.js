@@ -3,6 +3,7 @@ import ResCards from "./ResCards";
 import Shimmer from "./Shimmer";
 import FilterButtons from "./FilterButtons";
 import Cuisines from "./Cuisines";
+import TopRestaurants from "./TopRestaurants";
 
 
 const Body  = ()=>{ 
@@ -16,6 +17,7 @@ const Body  = ()=>{
     let [listOfFIlters, setListOfFilters] = useState([]);
     let [listOfRestHeading, setListOfRestHeading] = useState([]);
     let [listOfCuisines, setListOfCuisines] = useState([]);
+    let [lisOfTopRes, setListOfTopRes] = useState([]);
 
     useEffect(()=>{
       fetchData();
@@ -29,6 +31,7 @@ const Body  = ()=>{
       setListOfFilters(json?.data?.cards[3]?.card?.card?.facetList);
       setListOfRestHeading(json?.data?.cards[2]?.card?.card.title);
       setListOfCuisines(json?.data?.cards[0]?.card?.card);
+      setListOfTopRes(json?.data?.cards[1]?.card?.card);
     }
 
     const toggleFilter = () => {
@@ -44,6 +47,8 @@ const Body  = ()=>{
     return listOfRest.length === 0?<Shimmer />: (
       <div className="res-container">
         <Cuisines cuisinesData={listOfCuisines}/>
+        <hr></hr>
+        <TopRestaurants topResList={lisOfTopRes}/>
         <hr></hr>
         <h1 className="res-container-heading">{listOfRestHeading}</h1>
         <FilterButtons filters={listOfFIlters} onRatingClick={toggleFilter}/>
