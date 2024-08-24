@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import FilterButtons from "./FilterButtons";
 import Cuisines from "./Cuisines";
 import TopRestaurants from "./TopRestaurants";
+import { Link } from "react-router-dom";
 
 
 const Body  = ()=>{ 
@@ -54,7 +55,7 @@ const Body  = ()=>{
         <FilterButtons filters={listOfFIlters} onRatingClick={toggleFilter}/>
         <div className="res-cards">
           {
-            filteredRest.map(resList=> <ResCards key={resList.info.id} resData={resList}/>)
+            filteredRest.map(resList=> <Link key={resList.info.id} to={"/restaurants/"+resList.info.id}><ResCards resData={resList}/></Link>)
           }
         </div>
       </div>

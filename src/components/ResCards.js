@@ -8,7 +8,7 @@ const ResCards = (props) =>{
     let header = discountInfo?.header;
     let subHeader = discountInfo?.subHeader;
     return (
-        <a href="/" className="res-card">
+        <div href="/" className="res-card">
           <div className="res-card-image-container">
             <img className="res-card-image-container-logo" alt="res-card-image-container-logo" src={res_images + cloudinaryImageId}/>
             <div className="res-card-image-container-paracontainer">
@@ -37,7 +37,7 @@ const ResCards = (props) =>{
               <p className="res-card-content-location-text">{areaName}</p>
             </div>
           </div>
-        </a>
+        </div>
     )
   }
 
