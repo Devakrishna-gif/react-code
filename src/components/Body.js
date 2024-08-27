@@ -5,6 +5,7 @@ import FilterButtons from "./FilterButtons";
 import Cuisines from "./Cuisines";
 import TopRestaurants from "./TopRestaurants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 const Body  = ()=>{ 
@@ -43,6 +44,13 @@ const Body  = ()=>{
         setFilteredRest(updatedList);
       }
     };
+
+    const onlineStatus = useOnlineStatus();
+
+    if(onlineStatus ===  false){
+      return <h1>Looks like you're offline! please check your connectivity</h1>
+    }
+
 
     
     return listOfRest.length === 0?<Shimmer />: (
